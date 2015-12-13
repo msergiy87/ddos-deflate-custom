@@ -209,7 +209,7 @@ if [ $KILL -eq 1 ]; then
 			$APF -d $CURR_LINE_IP
 		else
 			$IPT -I ddos-deflate -s $CURR_LINE_IP -j DROP
-			echo $CURR_LINE_CONN $CURR_LINE_IP >> /tmp/for_ddos_analiz
+#			echo $CURR_LINE_CONN $CURR_LINE_IP >> /tmp/for_ddos_analiz
 		fi
 	done < $BAD_IP_LIST
 	if [ $IP_BAN_NOW -eq 1 ]; then
