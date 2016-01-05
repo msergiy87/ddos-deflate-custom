@@ -25,5 +25,6 @@ EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 4) Create file $BAD_IP_LIST_ANALIZE:
 - excludes analysis addresses from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). These other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the file.
  
-5) You can collect statistics for analysis, but do not forget to configure logrotate
+5) You can collect statistics for analysis, but do not forget to configure logrotate.
+
 echo $CURR_LINE_CONN $CURR_LINE_IP >> /tmp/for_ddos_analiz
