@@ -6,6 +6,14 @@ Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
 The main goal of this script - defense Hosting server.
 
+Recomendations:
+
+Just move the files from root_scripts to a folder /root/scripts
+
+And replace your ddos.sh file.
+
+And configure ddos.conf file
+
 Major changes, file ddos.sh:
 
 1) Downloads variables from the file exclude_variables.conf to exclude from the analysis and blocking:
