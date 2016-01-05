@@ -6,7 +6,7 @@ Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
 The main goal of this script - defense Hosting server.
 
-Major changes:
+Major changes, file ddos.sh:
 
 1) Downloads variables from the file exclude_variables.conf to exclude from the analysis and blocking:
 - certain internal network addresses (LOCAL_NET, considered safe).
