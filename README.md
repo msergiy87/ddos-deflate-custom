@@ -4,9 +4,19 @@ Fork of DDoS Deflate http://deflate.medialayer.com/ with fixes, improvements and
 
 Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
+Debian Wheezy suport
+
 The main goal of this script - defense Hosting server.
 
 The common problem is that ddos-deflate script ban address of search systems. We try to solve it.
+
+Added Feaches:
+- prevent block some predefined local network addreses
+- prevent block some search systems addresses
+- prevent block some connections to FTP server addreses with some ports
+- create separate iptables chain for ddos
+- my custom prevent block some address in files joomla_admins.conf and search_system_ip.conf in which addresses add automatically by another scripts
+
 
 Recomendations:
 
