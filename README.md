@@ -19,11 +19,9 @@ The common problem is that ddos-deflate script ban address of search systems. We
 
 ##### Recomendations:
 
-Just move the files from root_scripts to a folder /root/scripts
-
-And replace your ddos.sh file.
-
-And configure ddos.conf file
+- Just move the files from root_scripts to a folder /root/scripts
+- And replace your ddos.sh file.
+- And configure ddos.conf file
 
 ##### Major changes, file ddos.sh:
 
