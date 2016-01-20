@@ -6,6 +6,8 @@ Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
 The main goal of this script - defense Hosting server.
 
+The common problem is that ddos-deflate script ban address of search systems. We try to solve it.
+
 Recomendations:
 
 Just move the files from root_scripts to a folder /root/scripts
