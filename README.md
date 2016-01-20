@@ -31,8 +31,9 @@ The common problem is that ddos-deflate script ban address of search systems. We
 - networks search engines (Search systems) - GOOGLE YANDEX MAILRU META YAHOO.
 
 EXCLUDE - defines the list of all addresses and templates that should be excluded from the analysis.
+```
 EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
-
+```
 ###### 2) Creates a Chain ddos-deflate in iptables and forwards to it all input traffic.
 
 ###### 3) Change command netstat:
