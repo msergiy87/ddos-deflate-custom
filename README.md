@@ -12,7 +12,7 @@ The common problem is that ddos-deflate script ban address of search systems. We
 
 ##### Added Feaches:
 - prevent block some predefined local network addreses
-- prevent block some search systems addresses
+- prevent block some predefined search systems addresses
 - prevent block some connections to FTP server addreses with some ports
 - create separate iptables chain for ddos
 - my custom prevent block some address in files joomla_admins.conf and search_system_ip.conf in which addresses add automatically by another scripts
