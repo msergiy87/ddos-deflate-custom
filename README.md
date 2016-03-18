@@ -41,16 +41,11 @@ EXCLUDE - defines the list of all address and templates that should be excluded 
 ```
 EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 ```
-###### 2) Create iptables chain ddos-deflate and forward to it all input traffic.
+###### 2) Create iptables chain for ddos-deflate and forward to it all input traffic.
 
-###### 3) Change command netstat:
-- exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 50000-52999
+###### 3) Add to ignore list my custom trusted ips from files:
+- exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). Other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the file.
+
+###### 4) Change command netstat:
+- exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 70000-72999
 - exclude all contained in EXCLUDE
-
-###### 4) Create file $BAD_IP_LIST_ANALIZE:
-- exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). These other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the file.
- 
-###### 5) You can collect statistics for analysis, but do not forget to configure logrotate.
-```
-echo $CURR_LINE_CONN $CURR_LINE_IP >> /tmp/for_ddos_analiz
-```
