@@ -21,6 +21,13 @@ Added Feaches
 - create separate iptables chain for ddos-deflate
 - prevent block some address from files joomla_admins.conf and search_system_ip.conf in which address add automatically by another scripts
 
+Requirements
+------------
+
+```
+apt-get install dsniff
+```
+
 Distros tested
 ------------
 
@@ -30,9 +37,6 @@ Usage
 ------------
 
 - install dsniff
-```
-apt-get install dsniff
-```
 - Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate
 - Just move files from root_scripts to a folder /root/scripts
 - And replace your ddos.sh file.
