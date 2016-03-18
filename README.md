@@ -4,6 +4,8 @@ Fork of DDoS Deflate http://deflate.medialayer.com/ with fixes, improvements and
 
 Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
+**Maintainer:** Jefferson González <jgmdev@gmail.com> - https://github.com/jgmdev/ddos-deflate
+
 Debian Wheezy suport
 
 The main goal of this script - defense Hosting server.
