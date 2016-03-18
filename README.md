@@ -23,7 +23,10 @@ The common problem is that ddos-deflate script ban address of search systems. We
 
 ##### Recomendations:
 
-- install dsniff - apt-get install dsniff
+- install dsniff
+```
+apt-get install dsniff
+```
 - Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate
 - Just move files from root_scripts to a folder /root/scripts
 - And replace your ddos.sh file.
@@ -43,8 +46,8 @@ EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 ```
 ###### 2) Create iptables chain for ddos-deflate and forward to it all input traffic.
 
-###### 3) Add to ignore list my custom trusted ips from files:
-- exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). Other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the file.
+###### 3) Add to ignore_list my custom trusted ipaddress from files:
+- exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). Other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the files.
 
 ###### 4) Change command netstat:
 - exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 70000-72999
