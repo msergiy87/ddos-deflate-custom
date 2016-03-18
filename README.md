@@ -14,14 +14,22 @@ The main goal of this script - defense Hosting server.
 
 The common problem is that ddos-deflate script ban address of search systems. We try to solve it.
 
-##### Added Feaches:
+Added Feaches
+------------
+
 - prevent block some predefined local network address
 - prevent block some predefined search systems address
 - prevent block some connections to FTP (server address) with some ports
 - create separate iptables chain for ddos-deflate
 - prevent block some address from files joomla_admins.conf and search_system_ip.conf in which address add automatically by another scripts
 
-##### Recomendations:
+Distros tested
+------------
+
+Currently, this is only tested on Debian 7.9. It should theoretically work on older versions of Ubuntu or Debian based systems.
+
+Usage
+------------
 
 - install dsniff
 ```
@@ -32,9 +40,10 @@ apt-get install dsniff
 - And replace your ddos.sh file.
 - And configure ddos.conf file
 
-##### Major changes, file ddos.sh:
+Major changes, file ddos.sh
+------------
 
-###### 1) Download variables from the file exclude_variables.conf (single point of reading for multiple applications) to exclude from the analysis and blocking:
+##### 1) Download variables from the file exclude_variables.conf (single point of reading for multiple applications) to exclude from the analysis and blocking:
 - certain internal network address (LOCAL_NET, considered safe).
 - some problematic users address (SOME_PROBLEM_USERS).
 - networks search engines (Search systems) - GOOGLE YANDEX MAILRU META YAHOO
@@ -44,11 +53,11 @@ EXCLUDE - defines the list of all address and templates that should be excluded 
 ```
 EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 ```
-###### 2) Create iptables chain for ddos-deflate and forward to it all input traffic.
+##### 2) Create iptables chain for ddos-deflate and forward to it all input traffic.
 
-###### 3) Add to ignore_list my custom trusted ipaddress from files:
+##### 3) Add to ignore_list my custom trusted ipaddress from files:
 - exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). Other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the files.
 
-###### 4) Change command netstat:
+##### 4) Change command netstat:
 - exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 70000-72999
 - exclude all contained in EXCLUDE
