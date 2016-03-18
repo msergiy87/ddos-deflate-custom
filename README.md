@@ -8,8 +8,6 @@ Original Author: Zaf zaf@vsnl.com (Copyright (C) 2005)
 
 **Maintainer 2:** msergiy87 <sergiy_007@ukr.net>
 
-Debian Wheezy suport
-
 The main goal of this script - defense Hosting server.
 
 The common problem is that ddos-deflate script ban address of search systems. We try to solve it.
