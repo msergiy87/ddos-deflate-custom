@@ -16,18 +16,19 @@ The common problem is that ddos-deflate script ban address of search systems. We
 - prevent block some predefined local network addreses
 - prevent block some predefined search systems addresses
 - prevent block some connections to FTP server addreses with some ports
-- create separate iptables chain for ddos
-- my custom prevent block some address in files joomla_admins.conf and search_system_ip.conf in which addresses add automatically by another scripts
+- create separate iptables chain for ddos-deflate
+- prevent block some address from files joomla_admins.conf and search_system_ip.conf in which addresses add automatically by another scripts
 
 ##### Recomendations:
 
-- Just move the files from root_scripts to a folder /root/scripts
+- Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate
+- Just move files from root_scripts to a folder /root/scripts
 - And replace your ddos.sh file.
 - And configure ddos.conf file
 
 ##### Major changes, file ddos.sh:
 
-###### 1) Downloads variables from the file exclude_variables.conf to exclude from the analysis and blocking:
+###### 1) Download variables from the file exclude_variables.conf to exclude from the analysis and blocking:
 - certain internal network addresses (LOCAL_NET, considered safe).
 - addresses some problematic users (SOME_PROBLEM_USERS).
 - networks search engines (Search systems) - GOOGLE YANDEX MAILRU META YAHOO.
