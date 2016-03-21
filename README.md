@@ -46,14 +46,14 @@ Major changes, file ddos.sh
 ------------
 
 ##### 1) Download variables from the file exclude_variables.conf (single point of reading for multiple applications) to exclude from the analysis and blocking:
-- certain internal network address (LOCAL_NET, considered safe).
+- certain internal network address (TRUST_NET, considered safe).
 - some problematic users address (SOME_PROBLEM_USERS).
 - networks search engines (Search systems) - GOOGLE YANDEX MAILRU META YAHOO
 - server address and FTP ports
 
 EXCLUDE - defines the list of all address and templates that should be excluded from the analysis.
 ```
-EXCLUDE="$LOCAL_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
+EXCLUDE="$TRUST_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 ```
 ##### 2) Create iptables chain for ddos-deflate and forward to it all input traffic.
 
