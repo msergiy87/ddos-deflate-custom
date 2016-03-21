@@ -15,7 +15,7 @@ The common problem is that ddos-deflate script ban address of search systems. We
 Added Feaches
 ------------
 
-- prevent block some predefined local network address
+- prevent block some predefined local and trusted network address
 - prevent block some predefined search systems address
 - prevent block some connections to FTP (server address) with some ports
 - create separate iptables chain for ddos-deflate
