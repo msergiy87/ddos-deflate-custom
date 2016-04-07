@@ -39,6 +39,7 @@ apt-get install dsniff
 As root user execute the following commands:
 
 ```shell
+cd /tmp
 wget https://github.com/jgmdev/ddos-deflate/archive/master.zip
 unzip master.zip
 cd ddos-deflate-master
@@ -48,6 +49,7 @@ cd ddos-deflate-master
 3) Just move files from root_scripts to a folder /root/scripts
 
 ```
+cd /tmp
 wget https://github.com/msergiy87/ddos-deflate-custom/archive/master.zip
 unzip master.zip
 cd ddos-deflate-custom-master
