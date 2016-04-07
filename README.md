@@ -21,6 +21,11 @@ Added Feaches
 - create separate iptables chain for ddos-deflate
 - prevent block some address from files joomla_admins.conf and search_system_ip.conf in which address add automatically by another scripts
 
+Distros tested
+------------
+
+Currently, this is only tested on Debian 7.9. It should theoretically work on older versions of Ubuntu or Debian based systems.
+
 Installation
 ------------
 
@@ -73,11 +78,6 @@ As root user execute the following commands:
 cd ddos-deflate-master
 ./uninstall.sh
 ```
-
-Distros tested
-------------
-
-Currently, this is only tested on Debian 7.9. It should theoretically work on older versions of Ubuntu or Debian based systems.
 
 Usage
 ------------
