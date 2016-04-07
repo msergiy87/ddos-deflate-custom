@@ -29,13 +29,13 @@ Currently, this is only tested on Debian 7.9. It should theoretically work on ol
 Installation
 ------------
 
-1) install dsniff
+##### 1) install dsniff
 
-```
+```shell
 apt-get install dsniff
 ```
 
-2) Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate.
+##### 2) Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate.
 As root user execute the following commands:
 
 ```shell
@@ -46,9 +46,9 @@ cd ddos-deflate-master
 ./install.sh
 ```
 
-3) Just move files from root_scripts to a folder /root/scripts
+##### 3) Just move files from root_scripts to a folder /root/scripts
 
-```
+```shell
 cd /tmp
 wget https://github.com/msergiy87/ddos-deflate-custom/archive/master.zip
 unzip master.zip
@@ -57,14 +57,14 @@ mkdir /root/scripts
 mv root_scripts/* /root/scripts/
 ```
 
-4) And replace your ddos.sh file
+##### 4) And replace your ddos.sh file
 
-```
+```shell
 cp /usr/local/ddos/ddos.sh /usr/local/ddos/ddos.sh_backup
 cp ddos.sh /usr/local/ddos/ddos.sh
 ```
 
-4) And configure ddos.conf file
+##### 5) And configure ddos.conf file
 
 ```
 EMAIL_TO="hosting-security@example.com"
