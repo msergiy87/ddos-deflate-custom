@@ -21,11 +21,57 @@ Added Feaches
 - create separate iptables chain for ddos-deflate
 - prevent block some address from files joomla_admins.conf and search_system_ip.conf in which address add automatically by another scripts
 
-Requirements
+Installation
 ------------
+
+1) install dsniff
 
 ```
 apt-get install dsniff
+```
+
+2) Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate.
+As root user execute the following commands:
+
+```shell
+wget https://github.com/jgmdev/ddos-deflate/archive/master.zip
+unzip master.zip
+cd ddos-deflate-master
+./install.sh
+```
+
+3) Just move files from root_scripts to a folder /root/scripts
+
+```
+wget https://github.com/msergiy87/ddos-deflate-custom/archive/master.zip
+unzip master.zip
+cd ddos-deflate-custom-master
+mkdir /root/scripts
+mv root_scripts/* /root/scripts/
+```
+
+4) And replace your ddos.sh file
+
+```
+cp /usr/local/ddos/ddos.sh /usr/local/ddos/ddos.sh_backup
+cp ddos.sh /usr/local/ddos/ddos.sh
+```
+
+4) And configure ddos.conf file
+
+```
+EMAIL_TO="hosting-security@example.com"
+BAN_PERIOD=1800
+```
+
+Uninstallation
+------------
+
+As root user execute the following commands:
+
+```shell
+cd ddos-deflate-master
+./uninstall.sh
 ```
 
 Distros tested
@@ -35,12 +81,6 @@ Currently, this is only tested on Debian 7.9. It should theoretically work on ol
 
 Usage
 ------------
-
-- install dsniff
-- Install ddos-deflate from this repository https://github.com/jgmdev/ddos-deflate
-- Just move files from root_scripts to a folder /root/scripts
-- And replace your ddos.sh file.
-- And configure ddos.conf file
 
 Major changes, file ddos.sh
 ------------
