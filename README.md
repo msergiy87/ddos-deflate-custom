@@ -83,6 +83,7 @@ cd ddos-deflate-master
 
 Usage
 ------------
+Data in the files exclude_variables.conf or joomla_admins.conf or search_system_ip.conf is like example. You should change it.
 
 Major changes, file ddos.sh
 ------------
