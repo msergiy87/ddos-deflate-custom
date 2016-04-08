@@ -39,7 +39,7 @@ apt-get install dsniff
 As root user execute the following commands:
 
 ```shell
-cd /tmp
+cd /usr/src
 wget https://github.com/jgmdev/ddos-deflate/archive/master.zip
 unzip master.zip
 cd ddos-deflate-master
