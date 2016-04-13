@@ -71,6 +71,12 @@ EMAIL_TO="hosting-security@example.com"
 BAN_PERIOD=1800
 ```
 
+##### 5) And this to cron file
+
+```
+*/31 * * * *  /usr/local/ddos/ddos.sh -n > /dev/null 2>&1
+```
+
 Uninstallation
 ------------
 
