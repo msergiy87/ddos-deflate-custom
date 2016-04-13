@@ -29,23 +29,32 @@ load_ex_var()
 
 # Create iptables chain for ddos-deflate 
 #------------------------------------------------------------------------------------------
-iptables -nv -L ddos-deflate > /dev/null 2>&1
-if [ $? -ne 0 ]                                 # if not equal, not success
-then
-    iptables -N ddos-deflate
-fi
+load_create_iptables_chain()
+{
+	iptables -nv -L ddos-deflate > /dev/null 2>&1
+	if [ $? -ne 0 ]                                 # if not equal, not success
+	then
+	    iptables -N ddos-deflate
+	fi
 
-iptables -nv -L ddos-deflate | grep RETURN > /dev/null 2>&1
-if [ $? -ne 0 ]                                 # if not equal, not success
-then
-    iptables -A ddos-deflate -j RETURN
-fi
+	iptables -nv -L ddos-deflate | grep RETURN > /dev/null 2>&1
+	if [ $? -ne 0 ]                                 # if not equal, not success
+	then
+	    iptables -A ddos-deflate -j RETURN
+	fi
 
-iptables -nv -L INPUT | grep ddos-deflate > /dev/null 2>&1
-if [ $? -ne 0 ]                                 # if not equal, not success
-then
-    iptables -I INPUT 1 -j ddos-deflate
-fi
+	iptables -nv -L INPUT | grep ddos-deflate > /dev/null 2>&1
+	if [ $? -ne 0 ]                                 # if not equal, not success
+	then
+	    iptables -I INPUT 1 -j ddos-deflate
+	fi
+}
+
+case $1 in
+    '--chain' | '-n' )
+        load_create_iptables_chain
+        exit
+esac
 
 ################################################################################################
 
@@ -90,6 +99,7 @@ showhelp()
     echo '-t | --status: Show status of daemon and pid if currently running'
     echo '-v | --view: Display active connections to the server'
     echo '-k | --kill: Block all ip addresses making more than N connections'
+    echo '-n | --chain: Create iptables chain'
 }
 
 # Check if super user is executing the
@@ -140,9 +150,16 @@ ignore_list()
 
     grep -v "#" "${CONF_PATH}${IGNORE_IP_LIST}"
 
-    # Add to ignore list my custom trusted ips from files
-    grep -v "#" /root/scripts/joomla_admins.conf
-    grep -v "#" /root/scripts/search_system_ip.conf
+	# Add to ignore list my custom trusted ips from files
+	if [ -f /root/scripts/joomla_admins.conf ]
+	then
+		grep -v "#" /root/scripts/joomla_admins.conf
+	fi
+
+	if [ -f /root/scripts/search_system_ip.conf ]
+	then
+		grep -v "#" /root/scripts/search_system_ip.conf
+	fi
 
     if [ "$1" = "1" ]; then
         cut -d" " -f2 "${BANS_IP_LIST}"
@@ -205,7 +222,6 @@ add_to_cron()
 check_connections()
 {
     su_required
-    load_ex_var
 
     TMP_PREFIX='/tmp/ddos'
     TMP_FILE="mktemp $TMP_PREFIX.XXXXXXXX"
@@ -525,6 +541,7 @@ CONN_STATES="ESTABLISHED|SYN_SENT|SYN_RECV|FIN_WAIT1|FIN_WAIT2|TIME_WAIT|CLOSE_W
 
 # Load custom settings
 load_conf
+load_ex_var
 
 KILL=0
 
