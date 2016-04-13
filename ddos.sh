@@ -49,7 +49,7 @@ load_create_iptables_chain()
 	    iptables -I INPUT 1 -j ddos-deflate
 	fi
 
-	echo "iptables chain created"
+	echo "Iptables chain created"
 }
 
 case $1 in
