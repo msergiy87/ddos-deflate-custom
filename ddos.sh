@@ -15,7 +15,7 @@
 
 # Download variables for exclude: trustet network ips, search systems ips, FTP ips and allowed ports
 #------------------------------------------------------------------------------------------
-load_ex_var()
+load_exclude_vars()
 {
     EX_VAR="/root/scripts/exclude_variables.conf"
     if [ -f "$EX_VAR" ] && [ ! "$EX_VAR" == "" ]; then
@@ -51,12 +51,6 @@ load_create_iptables_chain()
 
 	echo "Iptables chain created"
 }
-
-case $1 in
-    '--chain' | '-n' )
-        load_create_iptables_chain
-        exit
-esac
 
 ################################################################################################
 
@@ -101,7 +95,6 @@ showhelp()
     echo '-t | --status: Show status of daemon and pid if currently running'
     echo '-v | --view: Display active connections to the server'
     echo '-k | --kill: Block all ip addresses making more than N connections'
-    echo '-n | --chain: Create iptables chain'
 }
 
 # Check if super user is executing the
@@ -315,6 +308,7 @@ check_connections()
         elif [ "$FIREWALL" = "csf" ]; then
             $CSF -d $CURR_LINE_IP
         elif [ "$FIREWALL" = "iptables" ]; then
+            load_create_iptables_chain
             $IPT -I ddos-deflate -s $CURR_LINE_IP -j DROP
         fi
 
@@ -543,7 +537,7 @@ CONN_STATES="ESTABLISHED|SYN_SENT|SYN_RECV|FIN_WAIT1|FIN_WAIT2|TIME_WAIT|CLOSE_W
 
 # Load custom settings
 load_conf
-load_ex_var
+load_exclude_vars
 
 KILL=0
 
