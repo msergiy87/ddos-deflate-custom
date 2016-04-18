@@ -338,8 +338,14 @@ view_connections()
         tail -n +3 | \
         # Match only the given connection states
         grep -E "$CONN_STATES" | \
-        # Extract only the fifth column
-        awk '{print $5}' | \
+        # Extract only the four and five column
+        awk '{print $4" "$5}' | \
+        # Exclude connections to some FTP ports
+        grep -vE "$PUREFTP" | \
+        # Extract only the second column
+        awk '{print $2}' | \
+        # Exclude some trusted ips from external file
+        grep -vE "$EXCLUDE" | \
         # Strip port without affecting ipv6 addresses (experimental)
         sed "s/:[0-9+]*$//g" | \
         # Ignore Server IP
@@ -536,6 +542,7 @@ CONN_STATES="ESTABLISHED|SYN_SENT|SYN_RECV|FIN_WAIT1|FIN_WAIT2|TIME_WAIT|CLOSE_W
 # Load custom settings
 load_conf
 load_exclude_vars
+PUREFTP=$(ifconfig | grep "inet " | awk '{print $2 ":'$FTP_PORTS'"}' | grep -v "127.0.0.1" | sed "s/addr://g" | xargs | sed -e 's/ /|/g')
 
 KILL=0
 
