@@ -229,7 +229,7 @@ check_connections()
         tail -n +3 | \
         # Match only the given connection states
         grep -E "$CONN_STATES" | \
-        # Extract only the four and five column
+        # Extract only the fourth and fifth column
         awk '{print $4" "$5}' | \
         # Exclude connections to some FTP ports
         grep -vE "$PUREFTP" | \
@@ -338,7 +338,7 @@ view_connections()
         tail -n +3 | \
         # Match only the given connection states
         grep -E "$CONN_STATES" | \
-        # Extract only the four and five column
+        # Extract only the fourth and fifth column
         awk '{print $4" "$5}' | \
         # Exclude connections to some FTP ports
         grep -vE "$PUREFTP" | \
