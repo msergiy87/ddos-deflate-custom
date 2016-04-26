@@ -104,5 +104,5 @@ EXCLUDE="$TRUST_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 - exclude analysis address from files joomla admin.conf (JOOMLA ADM) and search_system_ip.conf (SEARCH_SYS_IP). Other scripts write address of Joomla admins and address search engines that found other scripts (whois command and its analize) and recorded in the files.
 
 ##### 4) Change command netstat:
-- exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 70000-72999
+- exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 60000-62999
 - exclude all contained in EXCLUDE
