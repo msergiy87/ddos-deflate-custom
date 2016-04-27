@@ -12,7 +12,7 @@ The main goal of this script - defense Hosting server.
 
 The common problem is that ddos-deflate script ban address of search systems. We try to solve it.
 
-Added Feaches
+Added Features
 ------------
 
 - prevent block some predefined local and trusted network address
