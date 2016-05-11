@@ -106,3 +106,11 @@ EXCLUDE="$TRUST_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 ##### 4) Change command netstat:
 - exclude analysis of specific ports FTP, which work is set Pure-FTPd (PUREFTP) 60000-62999
 - exclude all contained in EXCLUDE
+
+Problems
+------------
+
+Can't help against SYN-flood attack, but can inform. If it happens - sent many letters
+Maybe block some search boot ip address
+Can block real users behind NAT if they together exceeded limit of connections
+Can't help against complex distributed attack from many ip adresses
