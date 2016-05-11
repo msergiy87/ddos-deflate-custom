@@ -110,7 +110,7 @@ EXCLUDE="$TRUST_NET|$GOOGLE|$YANDEX|$MAILRU|$META|$YAHOO|$SOME_PROBLEM_USERS"
 Problems
 ------------
 
-Can't help against SYN-flood attack, but can inform. If it happens - sent many letters
-Maybe block some search boot ip address
-Can block real users behind NAT if they together exceeded limit of connections
-Can't help against complex distributed attack from many ip adresses
+- Can't help against SYN-flood attack, but can inform. If it happens - sent many letters
+- Maybe block some search boot ip address
+- Can block real users behind NAT if they together exceeded limit of connections
+- Can't help against complex distributed attack from many ip adresses
